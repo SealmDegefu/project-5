@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import Home from './components/Home';
+import NavBar from './components/NavBar';
+import Index from './components/login/Index';
+import { Switch, Route, BrowserRouter as Router} from "react-router-dom";
 
 function App() {
+  const[user, setUser] = useState({});
+
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => {setUser(user)
+        });
+      }
+    });
+  }, []);
+  if (!user) return <Index onLogin={setUser} />;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+  <NavBar user={user} setUser={setUser} />
+  <Router>
+    <main>
+      <Switch>
+        <Route exact path="/">
+          <Home user={user} />
+        </Route>
+        </Switch>
+    </main>
+      </Router>
+    </>
   );
 }
 
