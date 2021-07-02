@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_06_29_161441) do
   enable_extension "plpgsql"
 
   create_table "checklist_items", force: :cascade do |t|
-    t.string "list"
+    t.text "list"
     t.integer "checklist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 2021_06_29_161441) do
 
   create_table "checklists", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.string "image_url"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_06_29_161441) do
   end
 
   create_table "user_checklist_items", force: :cascade do |t|
-    t.string "list"
+    t.text "list"
     t.boolean "isCompleted"
     t.integer "user_checklist_id"
     t.datetime "created_at", precision: 6, null: false
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(version: 2021_06_29_161441) do
 
   create_table "user_checklists", force: :cascade do |t|
     t.string "name"
+    t.string "image_url"
+    t.string "description"
     t.integer "user_id"
     t.integer "checklist_id"
     t.datetime "created_at", precision: 6, null: false

@@ -1,5 +1,5 @@
 class ChecklistItemSerializer < ActiveModel::Serializer
-  attributes :id, :list
+  attributes :id, :list 
 
   belongs_to :checklist
 end

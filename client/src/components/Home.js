@@ -11,7 +11,7 @@ const Home = ({ user }) => {
 
 	let interval = useRef();
 	const startTimer = () =>{
-		const countdownDate = new Date(`${user.weddingdate}`).getTime();
+		const countdownDate = new Date(`${user.wedding_date}`).getTime();
 		interval = setInterval(() => {
 			const now = new Date().getTime();
 			const distance = countdownDate - now;

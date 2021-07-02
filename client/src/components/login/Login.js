@@ -47,7 +47,7 @@ const Login = ({ onLogin }) => {
 				</div>
 			</div>
 		  </div>	
-		  <div className="footer">
+		  <div className="button-login">
 			<button type="submit" className="btn">
 			{isLoading ? "Loading..." : "Login"}
 			</button>

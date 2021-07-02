@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+After graduation I want to make this app more broad and open it for planners too 
+
+Create your team so you can see who has access to the profile 
+
+Create communication board for the bridesmaid and wedding planner to collaborate on ideas 
+
+They can put initials next to the checklis to see who checked off which list 

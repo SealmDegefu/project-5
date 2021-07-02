@@ -36,6 +36,9 @@ class Index extends React.Component {
     const currentActive = isLogginActive ? "login" : "register";
     return (
       <div style={{backgroundImage: `url("https://ae01.alicdn.com/kf/HTB1dtX6LYvpK1RjSZPiq6zmwXXaP/Newborn-Baby-Party-Theme-Photography-Background-Flower-Wall-Backdrop-Wedding-Photo-Studio-Vinyl-tlo-fotograficzne.jpg")`, backgroundRepeat: "no-repeat", backgroundSize: "cover", width: "100vw", height: "100vh"}} className="App">
+         <div className="footer">
+        <p className="footer-note">Don’t have a wedding planner? Don’t worry, Bride<span className="line-through">zilla</span> got you covered. This app will make sure you don’t miss any step to have the wedding of your dream.</p>
+      </div>
         <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
             {isLogginActive && (

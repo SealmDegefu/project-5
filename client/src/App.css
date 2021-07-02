@@ -106,7 +106,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  display: flex;
  justify-content: center;
  align-items: center;
- padding: 0px;
+ padding: 0px !important;
  background-color: white;
  
 }
@@ -140,5 +140,124 @@ font-size: 20px;
 
 .nav-item{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 17px;
+}
+
+.nav-bar{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.button{
+  background-color: #DEC088; 
+  color: white; 
+  width: 100px;
+  border: none; 
+  padding: 10px; 
+  padding-left: 0px;
+  border-radius: 3px;
+  font-size: 18px; 
+  font-weight: bold; 
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.footer{
+  padding: 0.5rem;
+  background-color: white;
+  position: fixed;
+  font-size: 15px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.footer p{
+  margin-bottom: 0px;
+}
+.footer-note{
+  font-size: 20px;
+}
+
+.line-through{
+  text-decoration: line-through;
+}
+.card-container{
+  background-color: #fff;
+  box-shadow: 0px 0px 15px -5px;
+	transition: 0.3s;
+	animation: ease-in;
+	border-radius: 3%;
+	overflow: hidden;
+	width: 25vw;
+	height: 23vw;
+	margin: 10px;
+	display: inline-block;
+  flex-wrap: wrap;
+}
+
+.card-body{
+text-align: center;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-weight: 700;
+}
+
+.card-paragraph{
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 16px;
 }
+
+.bridesmaids-container{
+  background-image: url("https://www.refinery29.com/images/10461924.jpg?crop=40%3A21");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw; 
+  height: 100vh;
+}
+
+.bridesmaids-content{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  background-color: #fff;
+  width: 50%;
+  margin: 0px;
+  padding: 0;
+}
+
+
+input[id=cb]:checked~label p.strikethrough {
+  text-decoration: line-through;
+}
+
+.bridesmaids-container h1 {
+  text-align: center;
+  font-family: Permanant marker, cursive;
+  font-weight: 800;
+  font-size: 50px;
+  color: white
+}
+/* .checklist-container{
+  background-image: url("https://rrgrove.com/wp-content/uploads/2020/12/grove-interior-reception-slide.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw; 
+  height: 100vh;
+} */
+
+@media only screen and (min-width: 1200px) {
+	.card__container {
+	  width: 84%;
+	}
+  }
+  
+  @media only screen and (min-width: 1024px) {
+	.cards__items {
+	  display: flex;
+	}
+  }
+  
+  @media only screen and (max-width: 1024px) {
+	.cards__item {
+	  margin-bottom: 2rem;
+	}
+  }

@@ -43,9 +43,9 @@ const Register = ({ onLogin }) => {
         <div className="header">Register</div>
         <div className="content">
             <div className="image">
-                <img style={{height: "10em"}} src={logo} alt="logo"/>
+                <img style={{height: "11em"}} src={logo} alt="logo"/>
             </div>
-            <Form>
+            <Form className="register-form">
                 <FormGroup>
                     <Label for="username">Username: </Label>
                     <Input type="text" name="username"
@@ -85,7 +85,7 @@ const Register = ({ onLogin }) => {
                     />
                 </FormGroup>
 				<FormGroup>
-                    <Label for="hobbies" style={{marginRight: "10px"}}>Zipcode: </Label>
+                    <Label for="zipcode" style={{marginRight: "10px"}}>Zipcode: </Label>
                     <Input type="text" name="zipcode"
                     placeholder="zipcode"
                     value={zipcode}
@@ -94,8 +94,8 @@ const Register = ({ onLogin }) => {
                 </FormGroup>
             </Form>
           </div>
-          <div className="footer">
-            <Button style={{backgroundColor: "#DEC088", border: "none"}}>
+          <div className="button-login">
+            <Button style={{backgroundColor: "#DEC088", border: "none", marginBottom: "10px"}}>
             {isLoading ? "Loading..." : "Sign Up"}
             </Button>
             {errors.map((err) => (
