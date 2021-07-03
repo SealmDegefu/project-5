@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Bridesmaids = (props) => {
+const Venue = (props) => {
 	const item  = (id) =>{
 		let filteredItem = props.user.user_checklist_items.filter((user) => user.user_checklist_id === props.filteredId)
 	 		filteredItem.map(item => {
@@ -21,12 +21,12 @@ const Bridesmaids = (props) => {
 
 	const filteredItem = props.user.user_checklist_items ? props.user.user_checklist_items.filter((user) => user.user_checklist_id === props.filteredId) : null
 	return (
-		<div className="bridesmaids-container">
+		<div className="venue-container">
 		<center>
-		<h1 className="bridesmaids" style={{paddingTop: "10px"}}>Bridesmaids</h1>
+		<h1 className="venue" style={{paddingTop: "10px"}}>Venue</h1>
 				{filteredItem.map((user) => { 
 				return ( 
-				<div onClick={() =>item(user.id)} className="bridesmaids-content">
+				<div onClick={() =>item(user.id)} className="venue-content">
                 <input name="cb" type="checkbox" id="cb"/> 
          	    <label htmlFor="cb">
 				<p key={user.id} style={{marginLeft: "8px"}} className={user.isCompleted ? "todo-strike": "todo"}>{user.list}</p>
@@ -38,4 +38,5 @@ const Bridesmaids = (props) => {
 	)
 }
 
-export default Bridesmaids
+export default Venue
+

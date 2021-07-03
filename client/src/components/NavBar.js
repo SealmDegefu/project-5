@@ -6,8 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const NavBar = ({user, setUser}) => {
 function handleLogoutClick() {
 	fetch("/logout", { method: "DELETE" }).then((r) => {
-	  if (r.ok) {
-		setUser(null);
+	  if (r.ok) {setUser(null)
 	  }
 	});
   }

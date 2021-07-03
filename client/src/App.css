@@ -223,9 +223,40 @@ font-weight: 700;
   margin: 0px;
   padding: 0;
 }
+.wedding-container{
+  background-image: url("https://media.xogrp.com/images/7743652e-c191-4210-beed-a3bca03a699f");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw; 
+  height: 100vh;
+}
 
+.wedding-content{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  background-color: #fff;
+  width: 60%;
+  margin: 0px;
+  padding: 0;
+}
+.venue-container{
+  background-image: url("https://rrgrove.com/wp-content/uploads/2020/12/grove-interior-reception-slide.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw; 
+  height: 100vh;
+}
 
-input[id=cb]:checked~label p.strikethrough {
+.venue-content{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  background-color: #fff;
+  width: 50%;
+  margin: 0px;
+  padding: 0;
+}
+
+.todo-strike {
   text-decoration: line-through;
 }
 
@@ -236,8 +267,25 @@ input[id=cb]:checked~label p.strikethrough {
   font-size: 50px;
   color: white
 }
-/* .checklist-container{
-  background-image: url("https://rrgrove.com/wp-content/uploads/2020/12/grove-interior-reception-slide.jpg");
+
+.venue-container h1 {
+  text-align: center;
+  font-family: Permanant marker, cursive;
+  font-weight: 900;
+  font-size: 50px;
+  color: white
+}
+
+.wedding-container h1 {
+  text-align: center;
+  font-family: Permanant marker, cursive;
+  font-weight: 800;
+  font-size: 50px;
+  color: black
+}
+/* 
+.checklist-container{
+  background-image: url("https://asset.bloomnation.com/c_limit,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto,w_1005/v1611152717/vendor/3940/catalog/product/2/0/20190529081755_file_5ceee8f3bd86b_5ceee9216066e.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw; 

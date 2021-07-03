@@ -15,11 +15,6 @@ class UsersController < ApplicationController
 		end 
 	end
   
-	
-	def lists
-user_checklist_items = UserChecklistItem.all
-render json: user_checklist_items
-	end 
 
 	def show
 	  render json: @current_user 

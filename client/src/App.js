@@ -8,43 +8,52 @@ import Footer from './pages/Footer';
 import UserChecklist from './pages/UserChecklist';
 import WeddingRegistry from './pages/WeddingRegistry';
 import Bridesmaids from './pages/Bridesmaids';
+import Venue from './pages/Venue';
 
 
 function App() {
   const[user, setUser] = useState({});
+  const[userChecklistItems, setUserChecklistItems] = useState({})
   const [filteredId, setFilteredId] = useState(null)
-  const [isCompleted, setIsCompleted] = useState(false)
 
+  //complete checklist_item
+  
+  const handleToggle = (id) => {
+    let mapped = user.user_checklist_items.map(item => {
+      return item.id === Number(id) ? { ...item, isCompleted: !item.isCompleted } : { ...item};
+    });
+    setUserChecklistItems(mapped);
+  }
 
-  // const list = filteredItem.map((user) => user.list)
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => {setUser(user)
           
-          // console.log(list)
         });
       }
     });
   }, []);
 
-  function handleDeleteItem() {
-    setIsCompleted((true))
-  }
-
-  //fetch Checklist 
   // useEffect(() => {
-  //   fetch("/checklists")
-  //   .then((r) => r.json())
-  //   .then(setUserChecklist);
+  //   // get user_checklist_item
+  //   fetch("/user_checklist_items").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((userChecklistItems)=> {setUserChecklistItems(userChecklistItems)})
+  //     }
+  //   });
   // }, []);
+
 
   if (!user) return <Index onLogin={setUser} />;
 
   return (
     <>
-  <NavBar user={user} setUser={setUser} />
+  <NavBar 
+  userChecklistItems={userChecklistItems} 
+  user={user} 
+  setUser={setUser} />
   <Footer />
   <Router>
     <main>
@@ -57,12 +66,22 @@ function App() {
         setFilteredId ={setFilteredId}
          user={user} />
         </Route>
-        <Route path="/Wedding%20Registry" >
-        <WeddingRegistry user={user} />
+        <Route path="/Wedding Registry" >
+        <WeddingRegistry 
+        handleToggle={handleToggle}
+        filteredId={filteredId}
+        user={user} />
+        </Route>
+        <Route path="/Venue" >
+        <Venue 
+         handleToggle={handleToggle}
+        filteredId={filteredId}
+        user={user} />
         </Route>
         <Route path="/Bridesmaids" >
         <Bridesmaids 
-        onDeleteItem={handleDeleteItem}
+        userChecklistItems={userChecklistItems}
+        handleToggle={handleToggle}
         filteredId ={filteredId}
         user={user} />
         </Route>

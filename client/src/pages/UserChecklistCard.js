@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 const UserChecklistCard = ({setFilteredId, checklist}) => {
 	return (
+		// <div className="checklist-container">
 	 <div className="card-container">
       <div className="image-container">
         <img top width="100%" style={{height: "16vw"}} src={checklist.image_url} alt="Card image cap"></img>
@@ -12,6 +13,7 @@ const UserChecklistCard = ({setFilteredId, checklist}) => {
         </div>
           <p className="card-paragraph">{checklist.description}</p>
         </div>
+		// </div>
 	)
 }
 

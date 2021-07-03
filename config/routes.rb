@@ -3,7 +3,6 @@ resources :checklists
 resources :user_checklist_items
 resources :notes
 
-get "me/user_checklist_items", to: "users#lists"
 post "/signup", to: "users#create"
 get "/me", to: "users#show"
 
