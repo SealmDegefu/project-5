@@ -306,6 +306,7 @@ textarea{
   resize: none;
   background-color: burlywood;
   height: 120px;
+  width: 180px;
 }
 
 textarea:focus{
