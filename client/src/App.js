@@ -9,13 +9,41 @@ import UserChecklist from './pages/UserChecklist';
 import WeddingRegistry from './pages/WeddingRegistry';
 import Bridesmaids from './pages/Bridesmaids';
 import Venue from './pages/Venue';
+import NotesList from './pages/NotesList';
+import { nanoid } from 'nanoid';
+import NoteSearch from './pages/NoteSearch';
 
+//notes
+const initialState = {
+notes: "",
+date: ""
+}
 
 function App() {
   const[user, setUser] = useState({});
   const[userChecklistItems, setUserChecklistItems] = useState({})
   const [filteredId, setFilteredId] = useState(null)
+  const [notes, setNotes] = useState(initialState);
 
+const [searchText, setSearchText] = useState("");
+//function to update note state
+
+const addNote = (text) =>{
+   const date = new Date()
+   const newNote={
+     id: nanoid(),
+     text: text,
+     date: date.toLocaleDateString()
+   }
+   const newNotes = [...notes, newNote];
+   setNotes(newNotes);
+};
+
+// delete note 
+const deleteNote = (id) => {
+  const newNotes = notes.filter((note) => note.id !== id);
+  setNotes(newNotes)
+}
   //complete checklist_item
   
   const handleToggle = (id) => {
@@ -85,6 +113,15 @@ function App() {
         filteredId ={filteredId}
         user={user} />
         </Route>
+        <div className="notes-container">
+        <NoteSearch handleSearchNote={setSearchText} />
+        <Route path="/notes">
+          <NotesList 
+          handleDeleteNote={deleteNote}
+          handleAddNote={addNote}
+          notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}/>
+        </Route>
+        </div>
         </Switch>
     </main>
       </Router>
