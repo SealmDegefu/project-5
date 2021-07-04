@@ -1,5 +1,5 @@
 class NoteSerializer < ActiveModel::Serializer
-  attributes :id, :notes, :date
+  attributes :id, :text
 
   has_one :user 
 end

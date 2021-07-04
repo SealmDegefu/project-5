@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 2021_06_29_161441) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.string "notes"
-    t.date "date"
+    t.string "text"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

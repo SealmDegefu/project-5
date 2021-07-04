@@ -1,33 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MdDeleteForever } from 'react-icons/md';
 
-const Note = ({ id, text, date, handleDeleteNote }) => {
+const date = new Date()
+const initialState = {
+ date: date.toLocaleDateString()
+}
 
-	function handleSubmit(e) {
-		e.preventDefault();
-		fetch("/profiles", {
-		  method: "POST",
-		  headers: {
-			"Content-Type": "application/json",
-		  },
-		  body: JSON.stringify({...formData, user_id: user.id}),
-		})
-		  .then((r) => r.json())
-		  .then((newProfile) => {
-			setFormData(initialState);
-			onAddProfile(newProfile);
+const Note = ({ note, handleDeleteNote }) => {
+	const [ getDate, setGetDate ] = useState(initialState)
+	const { id } = note
+	function handleDeleteProfile() {
+		fetch(`/notes/${id}`, {
+			method: "DELETE",
+		  }).then((r) => {
+			  if (r.ok) {
+				  handleDeleteNote(note);
+			  }
 		  });
-		  console.log("hey")
-		  history.push('/myprofile')
+		  console.log(getDate)
 	  }
+	
 
 	return (
 		<div className="note">
-			<span>{text}</span>
+			<span>{note.text}</span>
 			<div className="note-footer">
-			<small>{date}</small>
+			<small>{getDate.date}</small>
 			<MdDeleteForever 
-			onClick={() => handleDeleteNote(id)} 
+			onClick={handleDeleteProfile} 
 			className="delete-icon" 
 			size="1.3em" />
 			</div>

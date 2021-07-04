@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 const Bridesmaids = (props) => {
 	const item  = (id) =>{
@@ -33,6 +34,11 @@ const Bridesmaids = (props) => {
                 </label>
 				</div>
 				)})}
+				<div className="bridesmaids">
+				<Link to="/notes">
+				<button style={{backgroundColor: "#91ABB0", width: "50%", border: "none", color: "white", padding: "8px", borderRadius: "3px", fontSize: "20px", fontFamily: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"}}>Take notes</button>
+				</Link>
+				</div>
 				</center>
 		</div>
 	)

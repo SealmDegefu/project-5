@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+	skip_before_action :verify_authenticity_token
+
 	def index
 		notes = Note.all
 		render json: notes
@@ -37,6 +39,6 @@ class NotesController < ApplicationController
 	private 
 
 	def note_params
-		params.permit(:notes, :date)
+		params.permit(:text)
 	end 
 end

@@ -10,34 +10,24 @@ import WeddingRegistry from './pages/WeddingRegistry';
 import Bridesmaids from './pages/Bridesmaids';
 import Venue from './pages/Venue';
 import NotesList from './pages/NotesList';
-import { nanoid } from 'nanoid';
 import NoteSearch from './pages/NoteSearch';
 
-//notes
-const initialState = {
-notes: "",
-date: ""
-}
+
+// set initial note state
 
 function App() {
   const[user, setUser] = useState({});
   const[userChecklistItems, setUserChecklistItems] = useState({})
   const [filteredId, setFilteredId] = useState(null)
-  const [notes, setNotes] = useState(initialState);
-
+  const [notes, setNotes] = useState([]);
+	
 const [searchText, setSearchText] = useState("");
 //function to update note state
 
-const addNote = (text) =>{
-   const date = new Date()
-   const newNote={
-     id: nanoid(),
-     text: text,
-     date: date.toLocaleDateString()
-   }
-   const newNotes = [...notes, newNote];
-   setNotes(newNotes);
-};
+function addNote (addedNotes){
+  setNotes((notes) => [...notes, addedNotes]);
+ };
+
 
 // delete note 
 const deleteNote = (id) => {
@@ -64,6 +54,17 @@ const deleteNote = (id) => {
     });
   }, []);
 
+  //fetch notes
+  useEffect(() => {
+    // auto-login
+    fetch("/notes").then((r) => {
+      if (r.ok) {
+        r.json().then((notes) => {setNotes(notes)
+          console.log(notes.map((note) => note.text))
+        });
+      }
+    });
+  }, []);
   // useEffect(() => {
   //   // get user_checklist_item
   //   fetch("/user_checklist_items").then((r) => {
@@ -117,6 +118,9 @@ const deleteNote = (id) => {
         <NoteSearch handleSearchNote={setSearchText} />
         <Route path="/notes">
           <NotesList 
+          searchText={searchText}
+          user={user}
+          onAddNote={addNote}
           handleDeleteNote={deleteNote}
           handleAddNote={addNote}
           notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}/>
