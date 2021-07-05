@@ -11,6 +11,7 @@ import Bridesmaids from './pages/Bridesmaids';
 import Venue from './pages/Venue';
 import NotesList from './pages/NotesList';
 import NoteSearch from './pages/NoteSearch';
+import Blogs from './pages/Blogs';
 
 
 // set initial note state
@@ -89,6 +90,9 @@ const deleteNote = (id) => {
       <Switch>
         <Route exact path="/">
           <Home user={user} />
+        </Route>
+        <Route path="/blogs">
+          <Blogs />
         </Route>
         <Route path="/userchecklists" >
         <UserChecklist

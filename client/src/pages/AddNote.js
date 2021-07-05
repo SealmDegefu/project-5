@@ -19,7 +19,7 @@ const AddNote = ({ onAddNote, handleSubmit}) => {
 	  }
 //post notes
 	function handleSubmit(e) {
-		e.preventDefault();
+		// e.preventDefault();
 		console.log(noteText)
 		axios
 		.post('/notes', noteText)
