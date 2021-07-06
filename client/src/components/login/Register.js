@@ -39,6 +39,7 @@ const Register = ({ onLogin }) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
+    <div className="container">
         <div className="base-container">
         <div className="header">Register</div>
         <div className="content">
@@ -50,13 +51,12 @@ const Register = ({ onLogin }) => {
                     <Label for="username">Username: </Label>
                     <Input type="text" name="username"
                     placeholder="username"
-                    style={{marginBottom: "5px"}}
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="password" style={{marginRight: "10px"}}>Password: </Label>
+                    <Label for="password">Password: </Label>
                     <Input type="password" name="password" placeholder="password"
                     style={{marginBottom: "5px"}}
                     value={password}
@@ -65,7 +65,7 @@ const Register = ({ onLogin }) => {
                       />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="password" style={{marginRight: "10px"}}>Password Confirmation:</Label>
+                    <Label for="password" >Password Confirmation:</Label>
                     <Input type="password"
                     name="password"
                     id="password_confirmation"
@@ -77,7 +77,7 @@ const Register = ({ onLogin }) => {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="date" style={{marginRight: "10px"}}>Wedding Date: </Label>
+                    <Label for="date">Wedding Date: </Label>
                     <Input type="date" name="wedding_date"
                     placeholder="date placeholder"
                     value={wedding_date}
@@ -85,7 +85,7 @@ const Register = ({ onLogin }) => {
                     />
                 </FormGroup>
 				<FormGroup>
-                    <Label for="zipcode" style={{marginRight: "10px"}}>Zipcode: </Label>
+                    <Label for="zipcode">Zipcode: </Label>
                     <Input type="text" name="zipcode"
                     placeholder="zipcode"
                     value={zipcode}
@@ -95,13 +95,14 @@ const Register = ({ onLogin }) => {
             </Form>
           </div>
           <div className="button-login">
-            <Button style={{backgroundColor: "#DEC088", border: "none", marginBottom: "10px"}}>
+            <Button style={{backgroundColor: "#DEC088", border: "none"}}>
             {isLoading ? "Loading..." : "Sign Up"}
             </Button>
             {errors.map((err) => (
         <Alert color="danger" style={{marginTop: "10px"}} key={err}>{err}</Alert>
         ))}
           </div>
+        </div>
         </div>
         </form>
 	)

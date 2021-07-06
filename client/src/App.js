@@ -22,6 +22,7 @@ function App() {
   const [filteredId, setFilteredId] = useState(null)
   const [notes, setNotes] = useState([]);
   const [blogs, setBlogs] = useState([])
+  const [filterblogs, setFilterBlogs] = useState('all')
 	
 const [searchText, setSearchText] = useState("");
 //function to update note state
@@ -62,22 +63,34 @@ const deleteNote = (id) => {
     fetch("/notes").then((r) => {
       if (r.ok) {
         r.json().then((notes) => {setNotes(notes)
-          console.log(notes.map((note) => note.text))
         });
       }
     });
   }, []);
 
   //fetch blogs
-  useEffect(() => {
-    fetch("/blogs").then((r) => {
-      if (r.ok) {
-        r.json().then((blogs) => {setBlogs(blogs)
+  // useEffect(() => {
+  //   fetch("/blogs").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((blogs) => {setBlogs(blogs)
           
-        });
-      }
-    });
-  }, []);
+  //       });
+  //     }
+  //   });
+  // }, []);
+
+  // filter blogs
+  const onFilter = () =>{
+    let url = '/blogs';
+    if (filterblogs !== 'all'){
+      url += `?label=${filterblogs}`
+    }
+    
+    fetch(url)
+    .then(res => res.json())
+    .then(filteredBlogs => setBlogs(filteredBlogs))
+    console.log(filterblogs)
+    }
   // useEffect(() => {
   //   // get user_checklist_item
   //   fetch("/user_checklist_items").then((r) => {
@@ -104,7 +117,11 @@ const deleteNote = (id) => {
           <Home user={user} />
         </Route>
         <Route path="/blogs">
-          <Blogs blogs={blogs}/>
+          <Blogs 
+          filterblogs={filterblogs}
+          setFilterBlogs={setFilterBlogs}
+          onFilter={onFilter}
+          blogs={blogs}/>
         </Route>
         <Route path="/userchecklists" >
         <UserChecklist

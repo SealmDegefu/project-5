@@ -40,7 +40,7 @@ class Index extends React.Component {
         <p className="footer-note">Don’t have a wedding planner? Don’t worry, Bride<span className="line-through">zilla</span> got you covered. This app will make sure you don’t miss any step to have the wedding of your dream.</p>
       </div>
         <div className="login">
-          <div className="container" ref={ref => (this.container = ref)}>
+          <div ref={ref => (this.container = ref)}>
             {isLogginActive && (
               <Login onLogin={this.props.onLogin} containerRef={ref => (this.current = ref)} />
             )}

@@ -30,6 +30,7 @@ const Login = ({ onLogin }) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
+		<div className="container">
 		<div className="base-container">
 		<div className="header">Login</div>
 		<div className="content">
@@ -55,6 +56,7 @@ const Login = ({ onLogin }) => {
           <Alert color="danger" style={{marginTop: "5px"}} key={err}>{err}</Alert>
         ))}
 		  </div>
+		</div>
 		</div>
 		</form>
 	)

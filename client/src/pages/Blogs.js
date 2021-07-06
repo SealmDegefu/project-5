@@ -1,73 +1,25 @@
 import React, {useState} from 'react';
 import './Blogs.css';
 import BlogItem from './BlogItem';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'react-bootstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import BlogCard from './BlogCard'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 
-function Blogs({ blogs }) {
-	const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
-		<a
-		  href=""
-		  ref={ref}
-		  onClick={(e) => {
-			e.preventDefault();
-			onClick(e);
-		  }}
-		>
-		  {children}
-		  &#x25bc;
-		</a>
-	  ));
-	const CustomMenu = React.forwardRef(
-		({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
-		  const [value, setValue] = useState('');
-	  
-		  return (
-			<div
-			  ref={ref}
-			  style={style}
-			  className={className}
-			  aria-labelledby={labeledBy}
-			>
-			  <formcontrol
-				autoFocus
-				className="mx-3 my-2 w-auto"
-				placeholder="Type to filter..."
-				onChange={(e) => setValue(e.target.value)}
-				value={value}
-			  />
-			  <ul className="list-unstyled">
-				{React.Children.toArray(children).filter(
-				  (child) =>
-					!value || child.props.children.toLowerCase().startsWith(value),
-				)}
-			  </ul>
-			</div>
-		  );
-		},
-	  );
+function Blogs({ blogs, setFilterBlogs, onFilter, filterblogs }) {
+	const [dropdownOpen, setDropdownOpen] = useState(false);
+
+	const toggle = () => setDropdownOpen(prevState => !prevState);
 
   return (
 	  <div>
-	<center className="blog-body">
-	<Dropdown>
-    <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-      Custom toggle
-    </Dropdown.Toggle>
-
-    <Dropdown.Menu as={CustomMenu}>
-      <Dropdown.Item eventKey="1">Red</Dropdown.Item>
-      <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-      <Dropdown.Item eventKey="3" active>
-        Orange
-      </Dropdown.Item>
-      <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
-    </Dropdown.Menu>
-  </Dropdown>,
-);
-</center>
-<div className='cards'>
+	<div className='cards'>
+	<select onChange={e =>setFilterBlogs(e.target.value)} className="drop-down" id="drop-down">
+	<option value="all">--Filter through blog topics</option>
+    <option value="Bridesmaids">Bridesmaids</option>
+    <option value="Wedding Registry">Wedding Registry</option>
+    <option value="Venue">Venue</option>
+</select>
+	<button onClick={onFilter}> Submit</button>
+<div>
 	{blogs.map((blogItem) => {
 		return (
             <BlogCard
@@ -75,6 +27,7 @@ function Blogs({ blogs }) {
 			 key={blogItem.id}
             />
 )})}
+</div>
 </div>
 	</div>
   );
