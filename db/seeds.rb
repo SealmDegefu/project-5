@@ -27,5 +27,38 @@ ChecklistItem.create!(list: "2- Decide the amount of guests you want to invite f
 ChecklistItem.create!(list: "3- Look at venue options in the locations you want and start putting in requests", checklist_id: checklist3.id)
 
 
+Blog.create!([
+	{
+	src: "https://asset.bloomnation.com/c_fit,f_auto,h_416,q_auto,w_624/v1/vendor/5663/blog/z/o/zola_fall2016_shoot_25.jpg",
+	text: "9 Simple Tips For A Stress-Free Wedding Registry",
+	label: "Wedding Registry",
+	href: "https://www.stylemepretty.com/registry-guide"
+	},
+	{
+	src: "https://ruffledblog.com/wp-content/uploads/wedding-registry-favorites-BBB.jpg",
+	text: "The Best Registry Items to Satisfy Every Passion",
+	label: "Wedding Registry",
+	href: "https://www.stylemepretty.com/2019/05/06/the-best-registry-items-to-satisfy-every-passion/"
+	},
+	{
+	src: "https://www.wildblueweddings.com/wp-content/uploads/2018/10/how-to-create-a-wedding-registry.jpg",
+	text: "The Best Registry Items to Satisfy Every Passion",
+	label: "Wedding Registry",
+	href: "https://www.stylemepretty.com/2019/05/06/the-best-registry-items-to-satisfy-every-passion/"
+	},
+	{
+	src: "https://southernbride.co.nz/wp-content/uploads/2016/10/wedding-gift-registry-wording-1024x683.jpg",
+	text: "10 Registry Items Worth The Splurge",
+	label: "Wedding Registry",
+	href: "https://www.stylemepretty.com/2019/05/08/registry-items-worth-the-price-tag/"
+	},
+	{
+	src: "https://itgirlweddings.com/wp-content/uploads/2016/07/2-edited.jpg",
+	text: "10 Registry Items Past Brides Still Use ALL Of The Time",
+	label: "Wedding Registry",
+	href: "https://www.stylemepretty.com/2019/06/11/10-registry-items-past-brides-still-use-all-of-the-time/"
+	},
+
+])
 
 

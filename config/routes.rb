@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 resources :checklists
 resources :user_checklist_items
 resources :notes
+resources :blogs
 
 post "/signup", to: "users#create"
 get "/me", to: "users#show"

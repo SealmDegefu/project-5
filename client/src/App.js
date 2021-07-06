@@ -21,6 +21,7 @@ function App() {
   const[userChecklistItems, setUserChecklistItems] = useState({})
   const [filteredId, setFilteredId] = useState(null)
   const [notes, setNotes] = useState([]);
+  const [blogs, setBlogs] = useState([])
 	
 const [searchText, setSearchText] = useState("");
 //function to update note state
@@ -66,6 +67,17 @@ const deleteNote = (id) => {
       }
     });
   }, []);
+
+  //fetch blogs
+  useEffect(() => {
+    fetch("/blogs").then((r) => {
+      if (r.ok) {
+        r.json().then((blogs) => {setBlogs(blogs)
+          
+        });
+      }
+    });
+  }, []);
   // useEffect(() => {
   //   // get user_checklist_item
   //   fetch("/user_checklist_items").then((r) => {
@@ -92,7 +104,7 @@ const deleteNote = (id) => {
           <Home user={user} />
         </Route>
         <Route path="/blogs">
-          <Blogs />
+          <Blogs blogs={blogs}/>
         </Route>
         <Route path="/userchecklists" >
         <UserChecklist

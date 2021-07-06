@@ -17,18 +17,24 @@
   }
   
   .cards__container {
-	display: flex;
+	background-color: #fff;
+	box-shadow: 0px 0px 15px -5px;
+	  transition: 0.3s;
+	  animation: ease-in;
+	  border-radius: 3%;
+	  overflow: hidden;
+	  width: 20vw;
+	  height: 20vw;
+	  margin: 10px;
+	  display: inline-block;
+	flex-wrap: wrap;
 	flex-flow: column;
 	align-items: center;
-	max-width: 1120px;
-	width: 50%;
-	margin: 0 auto;
-	background-color: #fff;
   }
   
   .cards__wrapper {
 	position: relative;
-	margin: 50px 0 45px;
+	margin: 20px 0 20px;
   }
   
   .cards__items {
@@ -38,7 +44,7 @@
   .cards__item {
 	display: flex;
 	flex: 1;
-	margin: 0 1rem;
+	/* margin: 0 1rem; */
 	border-radius: 10px;
   }
   
@@ -61,7 +67,7 @@
 	overflow: hidden;
   }
   
-   .fade-img {
+    .fade-img {
 	animation-name: fade-img;
 	animation-duration: 2s;
   } 
@@ -79,7 +85,7 @@
 	background-color: #1f98f4;
 	box-sizing: border-box;
   }
-  
+
   .cards__item__img {
 	position: absolute;
 	top: 0;
@@ -93,7 +99,7 @@
 	max-height: 100%;
 	object-fit: cover;
 	transition: all 0.2s linear;
-  }
+  } 
   .blog-body{
 	  background-color: #CBE5F4;
   }
@@ -107,8 +113,13 @@
   
   .cards__item__text {
 	color: #252e48;
-	font-size: 18px;
+	font-size: 19px;
+	font-weight: 800;
 	line-height: 24px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .drop-down{
+	  color:darkgreen
   }
   
   @media only screen and (min-width: 1200px) {
