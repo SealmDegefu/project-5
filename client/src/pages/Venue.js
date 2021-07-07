@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 
 const Venue = (props) => {
 	const item  = (id) =>{
-		let filteredItem = props.user.user_checklist_items.filter((user) => user.user_checklist_id === props.filteredId)
+		let filteredItem = props.userChecklistItems.filter((item) => item.id === id)
+		console.log(filteredItem, "filteredItem")
 	 		filteredItem.map(item => {
 		//  function handleUpdateChecklist(id) {
 			 fetch('/user_checklist_items/' + id, {
@@ -20,7 +21,8 @@ const Venue = (props) => {
 
 
 
-	const filteredItem = props.user.user_checklist_items ? props.user.user_checklist_items.filter((user) => user.user_checklist_id === props.filteredId) : null
+
+	const filteredItem = props.userChecklistItems ? props.userChecklistItems.filter((user) => user.user_checklist_id === props.filteredId) : null
 	return (
 		<div className="venue-container">
 		<center>

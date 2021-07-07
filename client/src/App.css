@@ -189,7 +189,7 @@ font-size: 20px;
 	border-radius: 3%;
 	overflow: hidden;
 	width: 25vw;
-	height: 23vw;
+	height: 24vw;
 	margin: 10px;
 	display: inline-block;
   flex-wrap: wrap;
@@ -228,7 +228,7 @@ font-weight: 700;
   padding: 0;
 }
 .wedding-container{
-  background-image: url("https://media.xogrp.com/images/7743652e-c191-4210-beed-a3bca03a699f");
+  background-image: url("https://hautefetes.com/wp-content/uploads/2020/12/Blog-Landscape-Photo-1.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw; 
@@ -242,6 +242,13 @@ font-weight: 700;
   width: 60%;
   margin: 0px;
   padding: 0;
+}
+.checklist-page{
+  background-image: url("https://i.pinimg.com/736x/16/02/e8/1602e82642dde06ebdcb923e2a3af0e9.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw; 
+  height: 100vh;
 }
 .venue-container{
   background-image: url("https://rrgrove.com/wp-content/uploads/2020/12/grove-interior-reception-slide.jpg");
@@ -282,10 +289,11 @@ font-weight: 700;
 
 .wedding-container h1 {
   text-align: center;
-  font-family: Permanant marker, cursive;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 800;
   font-size: 50px;
-  color: black
+  color: white;
+  margin-bottom: 5px;
 }
 .notes-container{
   max-width: 960px;
@@ -301,13 +309,13 @@ font-weight: 700;
 }
 
 .note.new{
-  background-color: burlywood;
+  background-color: #fff;
 }
 
 textarea{
   border: none;
   resize: none;
-  background-color: burlywood;
+  background-color: #fff;
   height: 120px;
   width: 180px;
 }
@@ -317,7 +325,7 @@ textarea:focus{
 
 }
 .note {
-  background-color: #DEE3F3;
+  background-color: #fff;
   border-radius: 10px;
   padding: 1rem;
   min-height: 170px;
@@ -327,6 +335,10 @@ textarea:focus{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 18px;
   white-space: pre-wrap;
+}
+.note-font{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
 }
 .delete-icon{
 cursor: pointer;
@@ -352,14 +364,14 @@ cursor: pointer;
 .search{
   display: flex;
   align-items: center;
-  background-color: #DEE3F3;
+  background-color: #fff;
   border-radius: 10px;
   padding: 5px;
   margin-bottom: 1.5em;
 }
 
 .search input{
-  background-color: #DEE3F3;
+  background-color: #fff;
   border: none;
 }
 
@@ -369,13 +381,37 @@ cursor: pointer;
 
 .notes-header{
   text-align: center;
-  font-family: Permanant marker, cursive;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
   font-weight: 800;
   font-size: 50px;
-  color: burlywood;
+  color: black;
+}
+
+.notes-background{
+  background-image: url("https://personalizedbykate.com/wp-content/uploads/2019/05/Wedding-Notes-Black-Silver.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw; 
+  height: 100vh;
+}
+
+.drop-down{
+  width: 15%;
+  height: 2.7%;
+  margin-left: 10px;
+}
+
+.blog-submit{
+  margin-left: 8px;
+  padding: 2.6px;
+  padding-right: 4px;
+  border-radius: 3px;
+  border: none;
+  background-color: #070B0D;
+  color: white
 }
 /* 
-.checklist-container{
+.ntoes-container{
   background-image: url("https://asset.bloomnation.com/c_limit,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto,w_1005/v1611152717/vendor/3940/catalog/product/2/0/20190529081755_file_5ceee8f3bd86b_5ceee9216066e.jpg");
   background-repeat: no-repeat;
   background-size: cover;

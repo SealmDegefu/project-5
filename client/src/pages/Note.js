@@ -17,13 +17,13 @@ const Note = ({ note, handleDeleteNote }) => {
 				  handleDeleteNote(note);
 			  }
 		  });
-		  console.log(getDate)
+		  console.log(note)
 	  }
 	
 
 	return (
 		<div className="note">
-			<span>{note.text}</span>
+			<span className="note-font">{note.text}</span>
 			<div className="note-footer">
 			<small>{getDate.date}</small>
 			<MdDeleteForever 

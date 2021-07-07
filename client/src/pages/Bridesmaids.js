@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 
 const Bridesmaids = (props) => {
 	const item  = (id) =>{
-		let filteredItem = props.user.user_checklist_items.filter((user) => user.user_checklist_id === props.filteredId)
+		let filteredItem = props.userChecklistItems.filter((item) => item.id === id)
+		console.log(filteredItem, "filteredItem")
 	 		filteredItem.map(item => {
 		//  function handleUpdateChecklist(id) {
 			 fetch('/user_checklist_items/' + id, {
@@ -20,15 +21,15 @@ const Bridesmaids = (props) => {
 
 
 
-	const filteredItem = props.user.user_checklist_items ? props.user.user_checklist_items.filter((user) => user.user_checklist_id === props.filteredId) : null
+	const filteredItem = props.userChecklistItems ? props.userChecklistItems.filter((user) => user.user_checklist_id === props.filteredId) : null
 	return (
 		<div className="bridesmaids-container">
 		<center>
 		<h1 className="bridesmaids" style={{paddingTop: "10px"}}>Bridesmaids</h1>
 				{filteredItem.map((user) => { 
 				return ( 
-				<div onClick={() =>item(user.id)} className="bridesmaids-content">
-                <input name="cb" type="checkbox" id="cb"/> 
+				<div className="bridesmaids-content">
+                <input onClick={() =>item(user.id)} name="cb" type="checkbox" id="cb"/> 
          	    <label htmlFor="cb">
 				<p key={user.id} style={{marginLeft: "8px"}} className={user.isCompleted ? "todo-strike": "todo"}>{user.list}</p>
                 </label>

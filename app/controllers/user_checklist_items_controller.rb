@@ -13,6 +13,7 @@ class UserChecklistItemsController < ApplicationController
 	end
 
 	def update
+		# byebug
 		user_checklist_items = UserChecklistItem.find_by(id: params[:id])
 		if user_checklist_items
 			user_checklist_items.update(user_checklist_items_params)
