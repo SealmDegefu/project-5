@@ -8,7 +8,6 @@ const Google = () => {
 		console.log(response);
 		console.log(response.profileObj);
 	  }
-	  
 	return (
 		<div>
       <GoogleLogin
