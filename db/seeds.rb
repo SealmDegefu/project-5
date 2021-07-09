@@ -14,6 +14,8 @@ checklist2 = Checklist.create!(image_url: "https://www.refinery29.com/images/104
 checklist3 = Checklist.create!(image_url: "https://rrgrove.com/wp-content/uploads/2020/12/grove-interior-reception-slide.jpg",name: "Venue", description: "This list will go through everything you need to checkoff to find your dream venue")
 
 
+
+
 ChecklistItem.create!(list: "Write down together as a couple what you want to include in your wedding registry", checklist_id: checklist1.id)
 ChecklistItem.create!(list: "Take inventory, make a list of what you have, as well as what you still need and want.", checklist_id: checklist1.id)
 ChecklistItem.create!(list: "Register as early as you can to give your guests an ample amount of time. You can use any site you want but our famous one is Zola.", checklist_id: checklist1.id)

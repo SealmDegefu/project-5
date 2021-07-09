@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import logo from '../../logo.png';
 import { Alert } from 'reactstrap';
 import './style.css';
+import Google from './Google';
 
 const Login = ({ onLogin }) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [errors, setErrors] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -52,6 +54,7 @@ const Login = ({ onLogin }) => {
 			<button type="submit" className="btn">
 			{isLoading ? "Loading..." : "Login"}
 			</button>
+			<Google />
 			{errors.map((err) => (
           <Alert color="danger" style={{marginTop: "5px"}} key={err}>{err}</Alert>
         ))}
