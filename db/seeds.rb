@@ -12,6 +12,9 @@ ChecklistItem.destroy_all
 checklist1 = Checklist.create!(image_url: "https://hautefetes.com/wp-content/uploads/2020/12/Blog-Landscape-Photo-1.png", name: "Wedding Registry", description: "This list will go through everything you need to checkoff for the wedding registry")
 checklist2 = Checklist.create!(image_url: "https://www.refinery29.com/images/10461924.jpg?crop=40%3A21", name: "Bridesmaids", description: "This list will go through everything you need to checkoff for the bridesmaids")
 checklist3 = Checklist.create!(image_url: "https://rrgrove.com/wp-content/uploads/2020/12/grove-interior-reception-slide.jpg",name: "Venue", description: "This list will go through everything you need to checkoff to find your dream venue")
+checklist4 = Checklist.create!(image_url: "https://www.brides.com/thmb/bUxBHQWhB0m6EAr5KtNBdFoOFY0=/1333x1333/filters:fill(auto,1)/Signage_Board_Welcome_v5crop-602e1994cbac46dd962dd0741a3fb744.jpg",name: "Guest List", description: "This list will go through everything you need to do to make sure everyone you want is present for the big day")
+checklist5 = Checklist.create!(image_url: "https://proimages.aisleplanner.com/s3fs-public/styles/banner_image_1920x800_/public/ee48908c-92fc-4374-8183-80b268abc843.png?VersionId=ndc8SqgdqOlbzWnNlsPhcEB7oSFfK8kZ&h=3fbbbcb6&itok=A0ghExSS",name: "Flower Arrangement", description: "This list will go through everything you need to checkoff to have your flower arrangments")
+checklist6 = Checklist.create!(image_url: "https://food-blog.csb.com/hubfs/Blog/3%20Trends%20die%20f%C3%BCr%20die%20Nahrungsmittel-%20und%20Getr%C3%A4nke-Industrie%20wichtig%20werden/Food%20Trens%20Food%20Business-ORIGINAL-882635-edited.jpg",name: "Food and Beverage", description: "This list will go through everything you need to checkoff to find your dream venue")
 
 
 
@@ -27,6 +30,18 @@ ChecklistItem.create!(list: "Make sure the bridesmaids will get sized and fitted
 ChecklistItem.create!(list: "First thing is first, decide location for the wedding", checklist_id: checklist3.id)
 ChecklistItem.create!(list: "Decide the amount of guests you want to invite from both side of the family", checklist_id: checklist3.id)
 ChecklistItem.create!(list: "Look at venue options in the locations you want and start putting in requests", checklist_id: checklist3.id)
+
+ChecklistItem.create!(list: "First thing is first, decide the type of cuisine you want at the wedding", checklist_id: checklist4.id)
+ChecklistItem.create!(list: "Once you have the cuisine picked, then look for a caterer to contact and decide on food", checklist_id: checklist4.id)
+ChecklistItem.create!(list: "The beverage is not as hard as finding food vendors so once you have the food confirmed, reach out to beverage managers to make a deal", checklist_id: checklist4.id)
+
+ChecklistItem.create!(list: "First thing is first, decide the type of cuisine you want at the wedding", checklist_id: checklist5.id)
+ChecklistItem.create!(list: "Once you have the cuisine picked, then look for a caterer to contact and decide on food", checklist_id: checklist5.id)
+ChecklistItem.create!(list: "The beverage is not as hard as finding food vendors so once you have the food confirmed, reach out to beverage managers to make a deal", checklist_id: checklist5.id)
+
+ChecklistItem.create!(list: "First thing is first, decide the type of cuisine you want at the wedding", checklist_id: checklist6.id)
+ChecklistItem.create!(list: "Once you have the cuisine picked, then look for a caterer to contact and decide on food", checklist_id: checklist6.id)
+ChecklistItem.create!(list: "The beverage is not as hard as finding food vendors so once you have the food confirmed, reach out to beverage managers to make a deal", checklist_id: checklist6.id)
 
 
 Blog.create!([

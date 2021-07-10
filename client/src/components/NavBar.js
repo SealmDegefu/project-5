@@ -36,6 +36,9 @@ function handleLogoutClick() {
              <NavLink href="/notes">Notes</NavLink>
            </NavItem>
            <NavItem>
+             <NavLink href="/suggestion">Bridezilla's suggestion</NavLink>
+           </NavItem>
+           <NavItem>
              {/* {profiles.length >0 ? <NavLink style={{color: "#9D7E68", fontSize: "18px", fontWeight: "bold", fontFamily: "Permanent Marker, cursive"}} href="/myprofile"> My Profile</NavLink> : <NavLink style={{color: "#9D7E68", fontSize: "18px", fontWeight: "bold", fontFamily: "Permanent Marker, cursive"}} href="/profile">Create Profile</NavLink>} */}
            </NavItem>
            <NavItem>

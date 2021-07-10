@@ -4,6 +4,8 @@ resources :user_checklist_items
 resources :notes
 resources :blogs
 
+get '/auth/:provider/callback', to: 'sessions#omniauth'
+
 post "/signup", to: "users#create"
 get "/me", to: "users#show"
 

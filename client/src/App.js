@@ -12,6 +12,10 @@ import Venue from './pages/Venue';
 import NotesList from './pages/NotesList';
 import NoteSearch from './pages/NoteSearch';
 import Blogs from './pages/Blogs';
+import FoodBeverage from './pages/FoodBeverage';
+import FlowerArrangement from './pages/FlowerArrangement';
+import GuestList from './pages/GuestList';
+import Suggestion from './pages/Suggestion';
 
 
 // set initial note state
@@ -58,16 +62,15 @@ const deleteNote = (id) => {
     // auto-login
     fetch("/me").then((r) => {
       if (r.ok) {
-        r.json().then((user) => {setUser(user)
-          
+        r.json().then((user) => {setUser(user)   
         });
       }
+      console.log(notes)
     });
   }, []);
 
   //fetch notes
   useEffect(() => {
-    // auto-login
     fetch("/notes").then((r) => {
       if (r.ok) {
         r.json().then((notes) => {setNotes(notes)
@@ -75,17 +78,6 @@ const deleteNote = (id) => {
       }
     });
   }, []);
-
-  //fetch blogs
-  // useEffect(() => {
-  //   fetch("/blogs").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((blogs) => {setBlogs(blogs)
-          
-  //       });
-  //     }
-  //   });
-  // }, []);
 
   // filter blogs
   
@@ -141,6 +133,9 @@ const deleteNote = (id) => {
         setFilteredId ={setFilteredId}
          user={user} />
         </Route>
+        <Route path="/suggestion" >
+        <Suggestion user={user}/>
+        </Route>
         <Route path="/Wedding Registry" >
         <WeddingRegistry 
           userChecklistItems={userChecklistItems}
@@ -163,11 +158,36 @@ const deleteNote = (id) => {
         filteredId ={filteredId}
         user={user} />
         </Route>
+        <Route path="/Food and Beverage" >
+        <FoodBeverage
+        setUser={setUser}  
+        userChecklistItems={userChecklistItems}
+        handleToggle={handleToggle}
+        filteredId ={filteredId}
+        user={user} />
+        </Route>
+        <Route path="/Flower Arrangement" >
+        <FlowerArrangement
+        setUser={setUser}  
+        userChecklistItems={userChecklistItems}
+        handleToggle={handleToggle}
+        filteredId ={filteredId}
+        user={user} />
+        </Route>
+        <Route path="/Guest List" >
+        <GuestList
+        setUser={setUser}  
+        userChecklistItems={userChecklistItems}
+        handleToggle={handleToggle}
+        filteredId ={filteredId}
+        user={user} />
+        </Route>
         <div className="notes-background">
         <div className="notes-container">
         <NoteSearch handleSearchNote={setSearchText} />
         <Route path="/notes">
           <NotesList 
+          setNotes={setNotes}
           searchText={searchText}
           user={user}
           onAddNote={addNote}

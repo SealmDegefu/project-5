@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { MdDeleteForever } from 'react-icons/md';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 const date = new Date()
 const initialState = {
@@ -9,6 +12,19 @@ const initialState = {
 const Note = ({ note, handleDeleteNote }) => {
 	const [ getDate, setGetDate ] = useState(initialState)
 	const { id } = note
+	const [open, setOpen] = React.useState(false);
+
+	const handleClick = () => {
+	  setOpen(true);
+	};
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+		  return;
+		}
+	
+		setOpen(false);
+	  };
+
 	function handleDeleteProfile() {
 		fetch(`/notes/${id}`, {
 			method: "DELETE",
@@ -17,7 +33,8 @@ const Note = ({ note, handleDeleteNote }) => {
 				  handleDeleteNote(note);
 			  }
 		  });
-		  console.log(note)
+		  	console.log(note)
+		  handleClick();
 	  }
 	
 
@@ -31,6 +48,23 @@ const Note = ({ note, handleDeleteNote }) => {
 			className="delete-icon" 
 			size="1.3em" />
 			</div>
+			<Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="Note archived"
+        action={
+			<React.Fragment>
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </React.Fragment>
+        }
+		/>
 		</div>
 	)
 }

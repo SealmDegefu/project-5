@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import logo from '../../logo.png';
 import { Alert } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router} from "react-router-dom";
 import './style.css';
 import Google from './Google';
 
@@ -29,6 +31,7 @@ const Login = ({ onLogin }) => {
 		  }
 		});
 	  }
+
 
 	return (
 		<form onSubmit={handleSubmit}>
