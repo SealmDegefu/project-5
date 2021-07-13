@@ -19,23 +19,25 @@ const AddNote = ({ onAddNote, handleSubmit}) => {
 	  }
 //post notes
 	function handleSubmit(e) {
+		if(noteText.text.trim().length > 0){
 		e.preventDefault();
 		console.log(noteText)
 		axios
 		.post('/notes', noteText)
 		.then(response => {
-			console.log(response)
+			onAddNote(response.data)
+			
 		})
 		.catch(error => {
 			console.log(error)
 		})
 		setNoteText(initialState)
+	}
 		}
 
 	const handleSaveClick = (e) =>{
-			if(noteText.text.trim().length > 0){
-			onAddNote(noteText)
-		}
+			// if(noteText.text.trim().length > 0){
+			// onAddNote(noteText)
 		}
 
 	return (

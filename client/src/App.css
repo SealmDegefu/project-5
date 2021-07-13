@@ -449,7 +449,7 @@ cursor: pointer;
 
 .notes-header{
   text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 800;
   font-size: 50px;
   color: black;
@@ -488,6 +488,7 @@ cursor: pointer;
   width: 15%;
   height: 2.7%;
   margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .blog-submit{
@@ -500,6 +501,11 @@ cursor: pointer;
   color: white
 }
 
+.blog-selector{
+  color: black !important; 
+  background-color: white !important;
+  font-family: Nunito Sans,Helvetica,sans-serif !important;
+}
 /* 
 .ntoes-container{
   background-image: url("https://asset.bloomnation.com/c_limit,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto,w_1005/v1611152717/vendor/3940/catalog/product/2/0/20190529081755_file_5ceee8f3bd86b_5ceee9216066e.jpg");
