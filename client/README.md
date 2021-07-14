@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Bridezilla: every bride's dream app
+This app was built using Session Auth, React hooks, React bootstrap, Postgresql, and Ruby on RailsAPI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The front-end will be found inside client
 
-## Available Scripts
+# Introduction
+Bridezilla is an app that allows users to create an account and track every checklist they have to go through before the big day. It is built with the user in mind so they can use this as a planner just without paying the cost for it.
 
-In the project directory, you can run:
+# Requirements
+Ruby 2.7.3
+NodeJS (v14 or higher), and npm
+Heroku CLI
+Postgresql
+See Environment Setup below for instructions on installing these tools if you don't already have them.
 
-### `yarn start`
+# Setup
+Fork and clone this repository.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then run:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+bundle install
+rails db:create
+npm install --prefix client
+You can use the following commands to run the application:
 
-### `yarn test`
+rails s: run the backend on http://localhost:3000
+npm start --prefix client: run the frontend on http://localhost:4000
+rails start: run the frontend and backend together with one command
+Make sure to also update this README to include documentation about your project. Here's a list of some awesome readmes for inspiration.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Deploying
+This application has all the starter code needed to help you deploy your application to Heroku. It's recommended to deploy your project early and push up changes often to ensure that your code works equally well in production and development environments.
 
-### `yarn build`
+To deploy, first log in to your Heroku account using the Heroku CLI:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+heroku login
+Create the new Heroku app:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+heroku create my-app-name
+Add the builds for Heroku to run the Rails app on Ruby and build the React app on Node:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+heroku buildpacks:add heroku/nodejs --index 1
+heroku buildpacks:add heroku/ruby --index 2
+To deploy, commit your code and push the changes to Heroku:
 
-### `yarn eject`
+git add .
+git commit -m 'Commit message'
+git push heroku main
+Note: depending on your Git configuration, your default branch might be named master or main. You can verify which by running git branch --show-current. If it's master, you'll need to run git push heroku master instead.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Any time you have changes to deploy, just make sure your changes are committed on the main branch of your repo, and push those changes to Heroku to deploy them.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can view your deployed app with:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+heroku open
+Environment Setup
+Ruby
+Ensure you are running the latest Ruby release supported by Heroku. At the time of writing, that's 2.7.3. You can verify with:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ruby -v
+If you don't see 2.7.3, you can install it and set it as the default version:
 
-## Learn More
+rvm install 2.7.3
+rvm --default use 2.7.3
+You should also install the latest versions of bundler and rails:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+gem install bundler
+gem install rails
+Install NodeJS
+Verify you are running a recent version of Node with:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+node -v
+If your Node version is less than 14, update it with:
 
-### Code Splitting
+nvm install node
+You can also update your npm version with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm i -g npm
+Install the Heroku CLI
+Follow this guide to install Heroku CLI (if you don't already have it):
 
-### Analyzing the Bundle Size
+https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+Install Postgresql
+Heroku requires that you use Postgresql for your database instead of SQLite. Postgresql (or just Postgres for short) is an advanced database management system with more features than SQLite. If you don't already have it installed, you'll need to set it up.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To install Postgres for WSL, follow this guide:
 
-### Making a Progressive Web App
+https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-postgresql
+To install Postgres for OSX, you can use Homebrew:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+brew install postgresql
+Once Postgres has been installed, run this command to start the Postgres service:
 
-### Advanced Configuration
+brew services start postgresql
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -21,6 +21,7 @@ const Suggestion = ({ user }) => {
 	const classes = useStyles();
 	const flowerurl= `https://www.yelp.com/search?find_desc=Wedding%20flower%20arrangments&find_loc=${user.zipcode}`
 	const venueurl= `https://www.yelp.com/search?find_desc=Wedding%20Venues&find_loc=${user.zipcode}`
+	const bridalshopurl= `https://www.yelp.com/search?find_desc=Bridal%20Dress%20Shops&find_loc=${user.zipcode}`
 
 	
 	return (
@@ -74,6 +75,22 @@ const Suggestion = ({ user }) => {
 			</a>
 			<a href="https://www.hitched.co.uk/wedding-planning/honeymoon-articles/destination-wedding/" target="_blank" >
 			or if you are feeling spontaneous here are some top rated wedding destinations
+			</a>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>Bridal Shops</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+		  <a href={bridalshopurl} target="_blank" >
+            Here are some popular bridal dress shops near you <br />
 			</a>
           </Typography>
         </AccordionDetails>
