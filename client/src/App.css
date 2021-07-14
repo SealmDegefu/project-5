@@ -259,7 +259,7 @@ font-weight: 700;
 }
 
 .flowerarrangement-container{
-  background-image: url("https://proimages.aisleplanner.com/s3fs-public/styles/banner_image_1920x800_/public/ee48908c-92fc-4374-8183-80b268abc843.png?VersionId=ndc8SqgdqOlbzWnNlsPhcEB7oSFfK8kZ&h=3fbbbcb6&itok=A0ghExSS");
+  background-image: url("https://media.architecturaldigest.com/photos/6019c5ff571b077c679a7092/4:3/w_4000,h_3000,c_limit/Cora_Premium.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw; 
@@ -337,7 +337,7 @@ font-weight: 700;
   font-family: Permanant marker, cursive;
   font-weight: 800;
   font-size: 50px;
-  color: white
+  color: #C1828C
 }
 .guestlist-container h1 {
   text-align: center;

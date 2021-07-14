@@ -37,7 +37,7 @@ const FlowerArrangement = (props) => {
 				)})}
 				<div className="flowerarrangement">
 				<Link to="/notes">
-				<button style={{backgroundColor: "#C59363", width: "50%", border: "none", color: "white", padding: "8px", borderRadius: "3px", fontSize: "20px", fontFamily: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"}}>Take notes</button>
+				<button style={{backgroundColor: "#C1828C", width: "50%", border: "none", color: "white", padding: "8px", borderRadius: "3px", fontSize: "20px", fontFamily: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"}}>Take notes</button>
 				</Link>
 				</div>
 				</center>

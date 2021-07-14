@@ -39,7 +39,7 @@ const Suggestion = ({ user }) => {
         <AccordionDetails>
           <Typography>
 		  <a href={flowerurl} target="_blank">
-          Here are some flower shops most bride's use near your area. 
+          Here are some flower shops most brides use near your area. 
 		  </a>
           </Typography>
         </AccordionDetails>
@@ -91,6 +91,22 @@ const Suggestion = ({ user }) => {
           <Typography>
 		  <a href={bridalshopurl} target="_blank" >
             Here are some popular bridal dress shops near you <br />
+			</a>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>Honeymoon</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+		  <a href="https://travel.usnews.com/rankings/best-honeymoon-destinations/" target="_blank" >
+            Here are some of the best honeymoon destinations in the world <br />
 			</a>
           </Typography>
         </AccordionDetails>
