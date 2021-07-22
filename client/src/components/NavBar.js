@@ -22,7 +22,7 @@ function handleLogoutClick() {
 	 </NavbarBrand> 
 	 </div>
 	  <Navbar className="nav-bar" color="faded" light>
-       <NavbarBrand href="/" className="nav-brand">Menu</NavbarBrand>
+       <NavbarBrand href="/" className="nav-brand">MENU</NavbarBrand>
        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
        <Collapse isOpen={!collapsed} navbar>
          <Nav navbar>

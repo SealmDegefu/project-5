@@ -51,7 +51,7 @@ function Blogs({ blogs, setBlog, setFilterBlogs, onFilter, filterblogs }) {
 	<Button className="blog-selector" onClick={handleClickOpen}>Choose A Blog title</Button>
 	</div>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>What topic do you feel like reading?</DialogTitle>
+        <DialogTitle className="selector-header">What topic do you feel like reading about today?</DialogTitle>
         <DialogContent>
           <form className={classes.container}>
             <FormControl className={classes.formControl}>

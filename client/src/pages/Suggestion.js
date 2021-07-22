@@ -54,8 +54,8 @@ const Suggestion = ({ user }) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-		  <a href="https://www.zola.com/" target="_blank" >
-            All our bride's here at bridezilla use Zola for all things wedding registry. 
+		  <a href="https://www.zola.com/onboard/new" target="_blank" >
+            All our brides here at bridezilla use Zola for all things wedding registry. 
 			</a>
           </Typography>
         </AccordionDetails>

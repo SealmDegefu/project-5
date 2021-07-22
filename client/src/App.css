@@ -135,7 +135,8 @@ font-size: 20px;
 
 .nav-brand{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
-  font-size: 30px !important;
+  font-size: 25px !important;
+  font-weight: 400;
 }
 
 .nav-item{
@@ -190,10 +191,9 @@ font-size: 20px;
 	overflow: hidden;
 	width: 25vw;
 	height: 24vw;
-	margin: 10px;
+	margin: 20px;
 	display: inline-block;
   flex-wrap: wrap;
-  
 }
 
 .image-container:hover{
@@ -244,7 +244,7 @@ font-weight: 700;
   padding: 0;
 }
 .checklist-page{
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/51fWTMkV5YL._AC_SY355_.jpg");
+  background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fall-flower-arrangement-moon-canyon-veranda-1562778296.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw; 
@@ -506,6 +506,7 @@ cursor: pointer;
   background-color: white !important;
   font-family: Nunito Sans,Helvetica,sans-serif !important;
 }
+
 /* 
 .ntoes-container{
   background-image: url("https://asset.bloomnation.com/c_limit,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto,w_1005/v1611152717/vendor/3940/catalog/product/2/0/20190529081755_file_5ceee8f3bd86b_5ceee9216066e.jpg");
